@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedido</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://kit.fontawesome.com/86701e1dec.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main class="productos">
+        <aside>
+            <h1>Pedido</h1>
+            <p>Selecciona producto</p>
+            <select name="nombreprod" id="nombreprod" placeholder="Selecciona Producto"></select>
+            <p>Precio</p>
+            <input type="text" id="precio" name="precio" placeholder="Precio">
+            <p>Cantidad</p>
+            <input type="number" min=0 id="cantidad" name="cantidad" placeholder="Cantidad">
+            <button type="button" id="agregar" value="Agregar">Agregar</button>
+            <button type="button" id="comprar" value="Comprar">Comprar</button>
+            <a href="index.html">Inicio</a>
+        </aside>
+        <section>
+            <table>
+                <tr>
+                    <th></th>
+                    <th>Producto</th>
+                    <th>Precio</th>
+                    <th>Cantidad</th>
+                    <th>Total Producto</th>
+                </tr>
+                <tbody id="pedidoTableBody">
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td class="tit" colspan="4">Subtotal $</td>
+                        <td id="subtotal">0</td>
+                    </tr>
+                    <tr>
+                        <td class="tit" colspan="4">IVA $</td>
+                        <td id="iva">0</td>
+                    </tr>
+                    <tr>
+                        <td class="tit" colspan="4">TOTAL $</td>
+                        <td id="total">0</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </section>
+
+        <script src="js/db/producto.js"></script>
+        <script src="js/utils/Myfetch.js"></script>
+        <script src="js/pedido.js"></script>
+
+    </main>
+</body>
+
+</html>

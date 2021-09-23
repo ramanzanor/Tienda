@@ -1,0 +1,75 @@
+        body {
+            background-color: lightblue;
+        }
+        
+        main {
+            display: flex;
+            padding: 10px;
+            align-items: left;
+            justify-content: flex-start;
+            line-height: 2;
+        }
+        
+        aside {
+            background-color: rgb(180, 195, 223);
+            display: flex;
+            padding: 10px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+            line-height: 1;
+        }
+        
+        section {
+            width: auto
+        }
+        
+        h1 {
+            text-align: center;
+            color: grey;
+        }
+        
+        th {
+            padding: 10px;
+            background-color: gray;
+            color: white
+        }
+        
+        td {
+            padding: 10px;
+            border: rgb(15, 95, 133) solid 2px;
+        }
+        
+        .tit {
+            padding: 10px;
+            border: rgb(107, 29, 29) solid 0px;
+            text-align: right;
+        }
+        
+        tfoot {
+            display: table-footer-group;
+            vertical-align: middle;
+            border-color: inherit;
+            border-top-color: inherit;
+            border-right-color: inherit;
+            border-bottom-color: inherit;
+            border-left-color: inherit;
+        }
+        
+        main.inicio {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: auto
+        }
+        
+        section.inicio {
+            display: flex;
+            justify-content: space-evenly;
+            width: auto
+        }
+        
+        button {
+            margin: 3px;
+            padding: 1px;
+        }

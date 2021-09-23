@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link rel="stylesheet" href="css/index.css">
+    <script src="https://kit.fontawesome.com/86701e1dec.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <main class="productos">
+        <aside>
+            <h1>Productos</h1>
+            <p>Nombre de Producto</p>
+            <input type="text" id="nombre" name="nombre" placeholder="Producto">
+            <p>Productos existentes</p>
+            <input type="text" id="existencias" name="existencias" placeholder="Existencias">
+            <p>Precio por producto</p>
+            <input type="text" id="precio" name="precio" placeholder="Precio">
+            <button type="button" id="agregar" value="Agregar">Agregar</button>
+            <a href="index.html">Inicio</a>
+            <a href="pedido.html">Pedido</a>
+        </aside>
+        <section>
+            <table>
+                <tr>
+                    <th></th>
+                    <th></th>
+                    <th>Producto</th>
+                    <th>Existencia</th>
+                    <th>Precio</th>
+                </tr>
+                <tbody id="productsTableBody">
+                </tbody>
+            </table>
+        </section>
+
+
+        <script src="js/db/producto.js"></script>
+        <script src="js/utils/Myfetch.js"></script>
+        <script src="js/tienda.js"></script>
+
+    </main>
+</body>
+
+</html>
