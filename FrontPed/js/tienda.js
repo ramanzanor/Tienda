@@ -12,6 +12,8 @@ async function fillFormProductToUpdate(i) {
     document.querySelector('#nombre').value = producto.nombre
     document.querySelector('#existencias').value = producto.existencias
     document.querySelector('#precio').value = producto.precio
+    document.querySelector('#status').value = producto.status
+
     btnAgregar.textContent = "Actualizar"
     btnAgregar.onclick = (e) => btnActualizarController(e, i)
 }
@@ -28,7 +30,7 @@ function fillTable(products) {
         iBasura.onclick = async() => {
             const res = confirm('Esta seguro de borrar el producto?')
             if (res) {
-                deleteProducto(i)
+                deleteProducto(p.nombre)
                 clearTable()
                 fillTable(await getProductos())
             }
@@ -47,12 +49,12 @@ function fillTable(products) {
         const tdNombre = document.createElement('td')
         const tdExistencias = document.createElement('td')
         const tdPrecio = document.createElement('td')
-            //const tdStatus = document.createElement('td')
+        const tdStatus = document.createElement('td')
 
         tdNombre.textContent = p.nombre
         tdExistencias.textContent = p.existencias
         tdPrecio.textContent = p.precio
-            //tdStatus.textContent = p.status
+        tdStatus.textContent = p.status
 
         tdDelete.appendChild(iBasura)
         tdUpdate.appendChild(iPluma)
@@ -61,7 +63,7 @@ function fillTable(products) {
         trProduct.appendChild(tdNombre)
         trProduct.appendChild(tdExistencias)
         trProduct.appendChild(tdPrecio)
-            //trProduct.appendChild(tdStatus)
+        trProduct.appendChild(tdStatus)
 
         productsTableBody.appendChild(trProduct)
     });
@@ -75,17 +77,19 @@ function clearTable() {
 
 const btnAgregar = document.querySelector('#agregar');
 
-btnAgregar.onclick = async(e) => {
+
+const btnAgregarController = async(e) => {
     const nombre = document.querySelector('#nombre').value
     const existencias = document.querySelector('#existencias').value
     const precio = document.querySelector('#precio').value
-    createProducto(nombre, precio, existencias)
+    const status = document.querySelector('#status').value
+    createProducto(nombre, precio, existencias, status)
     alert("Guardado")
     clearTable()
     fillTable(await getProductos())
     e.preventDefault();
 }
-
+btnAgregar.onclick = btnAgregarController
 async function btnActualizarController(e, i) {
     const nombre = document.querySelector('#nombre').value
     const existencias = document.querySelector('#existencias').value

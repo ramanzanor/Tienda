@@ -10,8 +10,8 @@ async function getProductoByIndex(i) {
         //return misProductos[i]
 }
 
-async function deleteProducto(i) {
-    const res = await MyFetch({ method: 'delete', path: '/products/' + i })
+async function deleteProducto(nombre) {
+    const res = await MyFetch({ method: 'delete', path: '/products/nombre/' + nombre })
     return res.data
         //return misProductos.splice(i, 1);
 }

@@ -8,8 +8,8 @@ const yup = require('yup')
 }) */
 
 //Ruta que regresa todos los productos
-router.get('/', (req, res) => {
-    const productos = getProductos()
+router.get('/', async(req, res) => {
+    const productos = await getProductos()
     res.status(200).json({
         data: productos,
         message: "products listed",
@@ -31,9 +31,9 @@ router.get('/:index', (req, res) => {
     })
 })
 
-router.delete('/:index', (req, res) => {
-        const index = req.params.index
-        const producto = deleteProducto(index)
+router.delete('/nombre/:nombre', async(req, res) => {
+        const nombre = req.params.nombre
+        const producto = await deleteProducto(nombre)
         res.status(200).json({
             data: producto,
             message: "product deleted",
@@ -41,14 +41,16 @@ router.delete('/:index', (req, res) => {
         })
     })
     //Ruta para actualizar producto por index
-router.patch('/:index', (req, res) => {
+router.patch('/:index', async(req, res) => {
     const index = req.params.index
     const { nombre, precio, existencias, status } = req.body;
-    updateProducto(index, nombre, precio, existencias, status)
+    const productoActualizado = await updateProducto(index, nombre, precio, existencias, status)
     res.status(200).json({
+        data: productoActualizado,
         message: "product updated",
         statusCode: 200
     })
+
 })
 
 //Ruta para crear un producto
