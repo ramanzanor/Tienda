@@ -25,18 +25,40 @@
         }
         
         h1 {
+            font: bolder 25px cursive;
             text-align: center;
-            color: grey;
+            color: white;
+            background-color: rgb(16, 3, 78);
+            border-radius: 8px;
+            padding: 10px;
+        }
+        
+        a:link {
+            color: rgb(16, 3, 78);
+            font: bolder 15px cursive;
+        }
+        
+        a:visited {
+            color: rgb(11, 119, 11);
+        }
+        
+        a:hover {
+            color: rgb(190, 124, 77);
+        }
+        
+        a:active {
+            color: rgb(255, 255, 255);
         }
         
         th {
             padding: 10px;
-            background-color: gray;
-            color: white
+            background-color: rgb(100, 3, 3);
+            color: white;
+            font: bolder 18px cursive;
         }
         
         td {
-            padding: 10px;
+            padding: 5px;
             border: rgb(15, 95, 133) solid 2px;
         }
         
@@ -72,4 +94,57 @@
         button {
             margin: 3px;
             padding: 1px;
+        }
+        
+        footer {
+            position: absolute;
+            width: 100%;
+            bottom: 0px;
+        }
+        
+        #contenedor {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: rgb(256, 256, 256, 0.5);
+            margin: 10px;
+        }
+        
+        #item1 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+        }
+        
+        #item3 {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 10px;
+        }
+        
+        .redondeado {
+            border-radius: 8px;
+            background-color: rgb(222, 233, 231);
+        }
+        
+        .confondo {
+            background-color: #def;
+        }
+        
+        p {
+            font: bolder 18px cursive;
+            color: rgb(214, 32, 32);
+            padding: 0px;
+            margin-left: 0cm;
+            margin-right: 0cm;
+            text-shadow: 3px 3px 5px white;
+        }
+        
+        links {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
         }

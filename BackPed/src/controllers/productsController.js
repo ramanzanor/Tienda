@@ -63,10 +63,7 @@ function getProductoByIndex(i) { //GET   /Products/:index
 }
 
 async function deleteProducto(nombre) {
-    // misProductos[i].nombre = nombre
-    // const nombre = "Atun"
-    //const nombre = misProductos[i].nombre
-    try {
+     try {
         await client.connect();
         console.log("Conectado a la base")
         const TIENDA_COLLECTION = client.db(DB_NAME).collection('productos')
@@ -85,23 +82,21 @@ async function deleteProducto(nombre) {
 }
 
 async function updateProducto(i, nombre, precio, existencias, status) { //PATCH      /Products/:index
-    /* misProductos[i].nombre = nombre
-    misProductos[i].precio = precio
-    misProductos[i].existencias = existencias
-    misProductos[i].status = status */
+
     try {
         await client.connect();
         console.log("Conectado a la base")
         const TIENDA_COLLECTION = client.db(DB_NAME).collection('productos')
         const productoActualizado = new Producto(nombre, precio, existencias, status)
         const res = await TIENDA_COLLECTION.updateOne({ nombre: nombre }, {
-            nombre: nombre,
-            precio: precio,
-            existencias: existencias,
-            status: status
+            $set: {
+                nombre: nombre,
+                precio: precio,
+                existencias: existencias,
+                status: status
+            }
         })
         console.log(res)
-        return productoActualizado
     } catch (e) {
         console.log("Ocurrio un error")
         console.log(e)

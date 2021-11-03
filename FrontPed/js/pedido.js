@@ -2,7 +2,8 @@ const body = document.querySelector('body');
 
 body.onload = async() => {
     const productos = await getProductos()
-        //console.log(productos)
+    fillTablePedido(await getPedido())
+    cuentaTotal(await getPedido())
     cargar(productos)
 }
 
@@ -34,10 +35,11 @@ function fillTablePedido(pedido) {
         iBasura.onclick = async() => {
             const res = confirm('Esta seguro de borrar el producto?')
             if (res) {
-                deleteProductoPedido(i)
+                deleteProductoPedido(p.nomproducto)
                 clearTable()
-                fillTablePedido(await getPedido())
+
             }
+            location.reload()
         }
 
 
@@ -107,7 +109,7 @@ function cuentaTotal(pedido) {
     pedido.forEach((p, i) => {
         subtotal += pedido[i].totalproducto
     })
-
+    console.log(subtotal)
     document.querySelector('#subtotal').textContent = subtotal
     const iva = subtotal * .16
     document.querySelector('#iva').textContent = iva

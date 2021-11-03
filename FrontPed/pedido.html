@@ -15,13 +15,13 @@
         <aside>
             <h1>Pedido</h1>
             <p>Selecciona producto</p>
-            <select name="nombreprod" id="nombreprod" placeholder="Selecciona Producto"></select>
+            <select name="nombreprod" id="nombreprod" class="redondeado" placeholder="Selecciona Producto"></select>
             <p>Precio</p>
-            <input type="text" id="precio" name="precio" placeholder="Precio">
+            <input type="text" class="redondeado" id="precio" name="precio" placeholder="Precio">
             <p>Cantidad</p>
-            <input type="number" min=0 id="cantidad" name="cantidad" placeholder="Cantidad">
-            <button type="button" id="agregar" value="Agregar">Agregar</button>
-            <button type="button" id="comprar" value="Comprar">Comprar</button>
+            <input type="number" min=0 id="cantidad" name="cantidad" class="redondeado" placeholder="Cantidad">
+            <button type="button" id="agregar" value="Agregar" class="redondeado">Agregar</button>
+            <button type="button" id="comprar" value="Comprar" class="redondeado">Comprar</button>
             <a href="index.html">Inicio</a>
         </aside>
         <section>
@@ -51,7 +51,14 @@
                 </tfoot>
             </table>
         </section>
-
+        <footer>
+            <hr>
+            <div id="contenedor">
+                <div id="item1"><a href="mailto:ramanzanor@gmail.com ">ramanzanor@gmail.com</a> <img src="IMG/icon_gmail.png" alt="Icono Gmail" width="30px"></div>
+                <div id="item2">RMR | 2021 </div>
+                <div id="item3"><img src="IMG/whatsapp_icon.png" alt="Icono Whatsapp" width="30">55-6740-8911</div>
+            </div>
+        </footer>
         <script src="js/db/producto.js"></script>
         <script src="js/utils/Myfetch.js"></script>
         <script src="js/pedido.js"></script>

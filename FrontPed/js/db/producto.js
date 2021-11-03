@@ -44,8 +44,8 @@ async function getPedido() {
     return res.data
 
 }
-async function deleteProductoPedido(i) {
-    const res = await MyFetch({ method: 'delete', path: '/pedidos/' + i })
+async function deleteProductoPedido(nombre) {
+    const res = await MyFetch({ method: 'delete', path: '/pedidos/nombre/' + nombre })
     return res.data
 
 }

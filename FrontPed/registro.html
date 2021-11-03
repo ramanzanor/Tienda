@@ -15,14 +15,14 @@
         <aside>
             <h1>Productos</h1>
             <p>Nombre de Producto</p>
-            <input type="text" id="nombre" name="nombre" placeholder="Producto">
+            <input type="text" class="redondeado" id="nombre" name="nombre" placeholder="Producto">
             <p>Productos existentes</p>
-            <input type="text" id="existencias" name="existencias" placeholder="Existencias">
+            <input type="text" class="redondeado" id="existencias" name="existencias" placeholder="Existencias">
             <p>Precio por producto</p>
-            <input type="text" id="precio" name="precio" placeholder="Precio">
+            <input type="text" class="redondeado" id="precio" name="precio" placeholder="Precio">
             <p>Estado</p>
-            <input type="text" id="status" name="status" placeholder="Status">
-            <button type="button" id="agregar" value="Agregar">Agregar</button>
+            <input type="text" class="redondeado" id="status" name="status" placeholder="Status">
+            <button class="redondeado" type="button" id="agregar" value="Agregar">Agregar</button>
             <a href="index.html">Inicio</a>
             <a href="pedido.html">Pedido</a>
         </aside>
@@ -40,7 +40,14 @@
                 </tbody>
             </table>
         </section>
-
+        <footer>
+            <hr>
+            <div id="contenedor">
+                <div id="item1"><a href="mailto:ramanzanor@gmail.com ">ramanzanor@gmail.com</a> <img src="IMG/icon_gmail.png" alt="Icono Gmail" width="30px"></div>
+                <div id="item2">RMR | 2021 </div>
+                <div id="item3"><img src="IMG/whatsapp_icon.png" alt="Icono Whatsapp" width="30">55-6740-8911</div>
+            </div>
+        </footer>
 
         <script src="js/db/producto.js"></script>
         <script src="js/utils/Myfetch.js"></script>

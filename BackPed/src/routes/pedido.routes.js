@@ -6,8 +6,8 @@ const { createPedido, getPedido, deleteProductoPedido } = require('../controller
 
 
 //Ruta que debe regresar el pedido
-router.get('/', (req, res) => {
-    const pedido = getPedido()
+router.get('/', async(req, res) => {
+    const pedido = await getPedido()
     res.status(200).json({
         data: pedido,
         message: "pedido listed",
@@ -17,18 +17,18 @@ router.get('/', (req, res) => {
 })
 
 //Ruta para crear un pedido eso creo
-router.post('/', (req, res) => {
+router.post('/', async(req, res) => {
 
     const { nomproducto, precio, cantidad, totalproducto } = req.body;
-    createPedido(nomproducto, precio, cantidad, totalproducto)
+    await createPedido(nomproducto, precio, cantidad, totalproducto)
     res.status(201).json({
         message: "pedido created",
         statusCode: 201
     })
 })
-router.delete('/:index', (req, res) => {
-    const index = req.params.index
-    const productopedido = deleteProductoPedido(index)
+router.delete('/nombre/:nombre', async(req, res) => {
+    const nombre = req.params.nombre
+    const productopedido = await deleteProductoPedido(nombre)
     res.status(200).json({
         data: productopedido,
         message: "productpedido deleted",
